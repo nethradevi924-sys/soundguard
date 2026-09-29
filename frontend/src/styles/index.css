@@ -1,0 +1,122 @@
+:root {
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sleek Dark Cyber & Apple Glass Palette */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: rgba(17, 24, 39, 0.78);
+  --bg-card-hover: rgba(31, 41, 55, 0.9);
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-focus: #38bdf8;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Priority Colors */
+  --priority-high: #ef4444;
+  --priority-med: #f59e0b;
+  --priority-low: #eab308;
+  --status-active: #10b981;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+
+  --font-scale: 1;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-card: #000000;
+  --border-subtle: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #ffff00;
+  --text-muted: #ffffff;
+  --priority-high: #ff0000;
+  --priority-med: #ff8800;
+  --priority-low: #ffff00;
+  --status-active: #00ff00;
+}
+
+/* Large Text Mode */
+body.large-text {
+  --font-scale: 1.25;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: calc(15px * var(--font-scale));
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 90px; /* Space for Mobile Bottom App Dock */
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(6, 182, 212, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 90% 90%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+/* Modern Card with Glassmorphic Border */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}

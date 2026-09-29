@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SoundGuard</string>
+    <string name="title_activity_main">SoundGuard</string>
+    <string name="package_name">com.safesphere.soundguard</string>
+    <string name="custom_url_scheme">com.safesphere.soundguard</string>
+</resources>

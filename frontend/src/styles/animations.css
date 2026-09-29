@@ -1,0 +1,126 @@
+/* Emergency Full Screen Strobe & Flash */
+@keyframes screenStrobeRed {
+  0% {
+    background-color: rgba(220, 38, 38, 0);
+  }
+  25% {
+    background-color: rgba(220, 38, 38, 0.45);
+  }
+  50% {
+    background-color: rgba(220, 38, 38, 0.05);
+  }
+  75% {
+    background-color: rgba(220, 38, 38, 0.40);
+  }
+  100% {
+    background-color: rgba(220, 38, 38, 0);
+  }
+}
+
+.screen-flash-emergency {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  animation: screenStrobeRed 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pulsing radar glow */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.pulse-active {
+  animation: radarPulse 2s infinite;
+}
+
+/* Alert Modal Entrance */
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-pop {
+  animation: modalPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* High Priority Glow Badge */
+@keyframes glowHigh {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6), inset 0 0 15px rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.9), inset 0 0 25px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.glow-high-box {
+  animation: glowHigh 1.5s ease-in-out infinite;
+}
+
+/* Circular Monitoring Pulsing Indicator */
+@keyframes circularListeningPulse {
+  0% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6), 0 0 30px rgba(16, 185, 129, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 20px rgba(16, 185, 129, 0), 0 0 45px rgba(16, 185, 129, 0.45);
+  }
+  100% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0), 0 0 30px rgba(16, 185, 129, 0.35);
+  }
+}
+
+@keyframes listeningRippleLayer {
+  0% {
+    transform: scale(0.88);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+.circular-pulse-active {
+  animation: circularListeningPulse 2.2s ease-in-out infinite;
+}
+
+.ripple-layer {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.45);
+  animation: listeningRippleLayer 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  pointer-events: none;
+}
+
+.ripple-layer-delayed {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(6, 182, 212, 0.4);
+  animation: listeningRippleLayer 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+}

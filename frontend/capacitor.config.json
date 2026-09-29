@@ -1,0 +1,8 @@
+{
+  "appId": "com.safesphere.soundguard",
+  "appName": "SoundGuard",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  }
+}
